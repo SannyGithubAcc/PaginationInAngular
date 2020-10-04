@@ -1,0 +1,29 @@
+<div>
+    <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
+    <br>
+    <div class="row m-2">
+        <div class="col">
+          <ngb-pagination [collectionSize]="count" boundaryLinks="true"
+              [pageSize]="pageSize" maxSize="4" rotate="true" [(page)]="currPage" (pageChange)="refreshGrid()"></ngb-pagination>
+        </div>
+      </div>
+    <div class="card-body">
+    <p><strong>Client Side Pagination : Total Records - {{count}}</strong></p>
+    <table class="table table-striped">
+      <thead>
+        <th>ID</th>
+        <th>TITLE</th>
+        <th>DESCRIPTION</th>
+        <th></th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let entry of posts">
+          <td>{{entry.id}}</td>
+          <td>{{entry.title}}</td>
+          <td>{{entry.body}}</td>
+            </tr>
+      </tbody>
+    </table>
+    
+  </div>
+</div>
